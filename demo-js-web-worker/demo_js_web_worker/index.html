@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Worker example: One-core computation</title>
+	  <style>
+	  #idText {
+		margin : 2px;
+		font-size : 18px;
+		background-color : gray;
+  	  }
+	</style>
+    <script src="./js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+		var worker = null;//initialisation + start the worker
+		function init(){
+			if(worker == null){
+				$("#idText").attr("background-color", "#ffffff");
+				worker = new Worker('./js/anim.js');
+				worker.onmessage = function (event) {
+					console.log("event :: "+event.data);
+					$("#idText").css("background-color", '#'+event.data);
+				}; 
+			}		
+		}
+		function startAnimation() {
+			init();
+			worker.postMessage(0);//send message to worker
+		}
+		function stopAnimation() {
+			worker.terminate();//Terminate the worker
+			worker = null;
+		}
+    </script>
+</head>
+<body>
+ 
+	<span style="width:150px; height:150px; border:2px; border-style: solid;" id="idText">Hello Web Worker</span>
+ 	<div>
+		<input type="button" class="btn btn-success" value="start animation" onclick="startAnimation()"/>
+		<input type="button"  class="btn btn-success" value="stop animation" onclick="stopAnimation()"/>
+	</div>
+</body>
+</html>

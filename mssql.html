@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<script data-main="require.js" src="require.js"></script>
+
+<script>
+var sql = require("mssql");
+
+var dbConfig = {
+    server: "localhost\\OrderManagement",
+    database: "",
+    user: "sa",
+    password: "",
+    port: 1433
+};
+
+function getEmp() {
+    var conn = new sql.Connection(dbConfig);
+    
+    conn.connect().then(function () {
+        var req = new sql.Request(conn);
+        req.query("SELECT * FROM dbo.OrderDetails").then(function (recordset) {
+            console.log(recordset);
+            conn.close();
+        })
+        .catch(function (err) {
+            console.log(err);
+            conn.close();
+        });        
+    })
+    .catch(function (err) {
+        console.log(err);
+    });
+}
+</script>
+</head>
+<body>
+SQL
+</body>
+</html>

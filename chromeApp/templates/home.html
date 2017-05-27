@@ -1,0 +1,39 @@
+<div id="datetime">
+  <h1>{{ mcl.date.raw | date:'hh mm ss' }}</h1>
+  <h2>{{ mcl.date.raw | date:'EEEE, MMMM yyyy' }}</h2>
+</div>
+
+<div id="forecast">
+  <ul class="row list-unstyled">
+    <li ng-repeat="day in mcl.weather.forecast.forecastday" class="col-md-3">
+      <div ng-class="{today: $index == 0}">
+        <img class="{{ day.icon }}" ng-src="{{ day.icon_url }}" />
+        <h3>{{ day.high.fahrenheit }}</h3>
+        <h4 ng-if="$index == 0">Now</h4>
+        <h4 ng-if="$index != 0">{{ day.date.weekday }}</h4>
+      </div>
+    </li>
+  </ul>
+</div>        
+<div class="container-fluid grey-lite-panel">
+    <table class="table">
+        <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Yield $</th>
+            <th>Yield %</th>
+            <th>Last Price</th>
+            <th>MktCap</th>
+        </tr>        
+    <tr ng-repeat="q in mcl.quote">
+        <td>{{q.symbol}}</td>
+        <td>{{q.Name}}</td>    
+        <td>{{q.DividendShare}}</td>    
+        <td>{{q.DividendYield}}%</td>    
+        <td>{{q.LastTradePriceOnly}}</td>
+        <td>{{q.MarketCapitalization}}</td>
+    </tr>
+    
+    </table>
+    
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@*" data-semver="1.2.0-rc2" src="http://code.angularjs.org/1.2.0-rc.2/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="Test">
+    <div ng-controller="TestController">
+      Controller: {{magicValue}}
+      <button ng-click="increment()">Click</button>
+
+      <ol>
+        <li><value-display1 value="magicValue"></value-display1></li>
+
+        <li><value-display2 value="magicValue"></value-display2></li>
+
+        <li><value-display3 value="{{magicValue}}"></value-display3></li>
+
+        <li><value-display4 value="magicValue"></value-display4></li>
+        
+        <li><value-display5 value="{{magicValue}}"></value-display5></li>
+      </ol>
+    </div>
+  </body>
+</html>
