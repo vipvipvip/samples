@@ -85,18 +85,17 @@ function memoize21( fn, depsFunc) {
     return function () {
         var args = Array.prototype.slice.call(arguments),
             hash = "",
-            i = args.length;
-        currentArg = null;
-        while (i--) {
             currentArg = JSON.stringify([depsFunc(), arguments]);
-            hash += (currentArg === JSON.stringify([depsFunc(), arguments])) ?
-            JSON.stringify([depsFunc(), arguments]) : currentArg;
-            fn.memoize || (fn.memoize = {});
-        }
+        
+        hash += (currentArg === JSON.stringify([depsFunc(), arguments])) ?
+        JSON.stringify([depsFunc(), arguments]) : currentArg;
+        fn.memoize || (fn.memoize = {});
+
         return (hash in fn.memoize) ? fn.memoize[hash] :
         fn.memoize[hash] = fn.apply(this, args);
     };
 }
+
 function Person(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
