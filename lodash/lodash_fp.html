@@ -1,0 +1,29 @@
+<script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+<script>
+// Loading `lodash.fp.js` converts `_` to its fp variant.
+console.log(_.defaults({ 'a': 2, 'b': 2 })({ 'a': 1 }));
+// ➜ { 'a': 1, 'b': 2 }
+
+// Use `noConflict` to restore the pre-fp variant.
+var fp = _.noConflict();
+
+console.log(_.defaults({ 'a': 1 }, { 'a': 2, 'b': 2 }));
+// ➜ { 'a': 1, 'b': 2 }
+console.log(fp.defaults({ 'a': 2, 'b': 2 })({ 'a': 1 }));
+// ➜ { 'a': 1, 'b': 2 }
+
+
+//memoize - factorial (its a pure function w/o any side effects)
+function factorial(num) {
+  if(num === 1) { return 1 };
+  console.log(num);
+  return num * factorial(num - 1);
+}
+
+var fact = _.memoize(factorial);
+console.log(fact(10));
+console.log(fact(10)); // successive calls will return precalculated value from memoization (won't see console.logs)
+
+console.log(factorial(10));
+console.log(factorial(10)); // successive calls will recalc and will see console.logs)
+</script>
