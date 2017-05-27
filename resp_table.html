@@ -1,0 +1,120 @@
+<html lang="en" ng-app="teamTools" class="no-js">
+
+<head>
+    <title>Responsive Table</title>
+
+    <!-- Meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=EDGE" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+<style>
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+table tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    display: none;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table td:before {
+    content: attr(aria-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+</style>	
+</head>
+
+<body>
+<table>
+  <caption>Statement Summary</caption>
+  <thead>
+    <tr>
+      <th scope="col">Account</th>
+      <th scope="col">Due Date</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" aria-label="Account">Visa - 3412</td>
+      <td aria-label="Due Date">04/01/2016</td>
+      <td aria-label="Amount">$1,190</td>
+      <td aria-label="Period">03/01/2016 - 03/31/2016</td>
+    </tr>
+    <tr>
+      <td scope="row" aria-label="Account">Visa - 6076</td>
+      <td aria-label="Due Date">03/01/2016</td>
+      <td aria-label="Amount">$2,443</td>
+      <td aria-label="Period">02/01/2016 - 02/29/2016</td>
+    </tr>
+    <tr>
+      <td scope="row" aria-label="Account">Corporate AMEX</td>
+      <td aria-label="Due Date">03/01/2016</td>
+      <td aria-label="Amount">$1,181</td>
+      <td aria-label="Period">02/01/2016 - 02/29/2016</td>
+    </tr>
+    <tr>
+      <td scope="row" aria-label="Acount">Visa - 3412</td>
+      <td aria-label="Due Date">02/01/2016</td>
+      <td aria-label="Amount">$842</td>
+      <td aria-label="Period">01/01/2016 - 01/31/2016</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+
+</html>

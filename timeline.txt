@@ -1,0 +1,26 @@
+{
+  "statusCode": 200,
+  "message": "test data",
+  "result": [
+    {
+      "guestId": "258145883275352301",
+      "type": "ride",
+      "startTimeDate": "2016-03-08T07:11:13.308-05:00",
+      "endTimeDate": "2016-03-09T07:11:13.308-05:00",
+      "attractionId": "13f3b625-b39e-4875-b29c-0173712b3c87",
+      "usedTimeDate": null,
+      "cancelledTimeDate": null,
+      "readyTimeDate": "2016-03-08T07:11:13.308-05:00",
+      "tliStatus": "active",
+      "locationDetails": {
+        "name": "Der Stuka",
+        "description": "Need ride description data from Tridion",
+        "restrictions": [
+          "wheelchairAccessible",
+          "mustBeMoreThan48inTall",
+          "needAllValuesForThisEnum"
+        ]
+      }
+    }
+  ]
+}
