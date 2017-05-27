@@ -6,6 +6,7 @@
 
 npm-debug.log
 debug.log
+/typings/
 
 # Node Modules folder
 /node_modules/*
