@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-    angular
-        .module('CityService')
-        .service('cityservice', Service);
+    angular.module('CityService', [
+        
+    ])
+    .service('cityservice', Service);
 
-    Service.$inject = [$http, $q];
     function Service($http, $q) {
         this.getCities = getCities;
         
