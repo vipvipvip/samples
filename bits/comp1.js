@@ -45,53 +45,56 @@
         .module('bits')
         .component('myComp', {
             template:`
-            <div class="panel-heading">Total: {{$ctrl.value}}</div>
-            <table class="table">
-               <thead>
-                <tr>
-                    <th>
-                        Selected    
-                    </th>
-                    <th>
-                        Table Name
-                    </th>
-                    <th>
-                        Bit pos
-                    </th>
-                    <th>
-                        Value
-                    </th>
-                    <th>
-                        Validation Expression
-                    </th>
-                    <th>
-                        Result
-                    </th>
-                   </tr>
-               </thead>
-               <tbody>
-                   <tr ng-repeat="tbl in $ctrl.tables">
-                    <td>
-                        <input type="checkbox"  ng-true-value=1 ng-false-value=0 ng-model="tbl.selected" id="filter_cb-{{tbl}}-{{$index}}" ng_change="$ctrl.calcValue(this);"> </input>
-                    </td>
-                      <td>
-                           {{tbl.city}}
-                       </td>
-                       <td>
-                           {{ tbl.rank}}
-                       </td>
-                       <td>
-                           {{ tbl.value }}
-                       </td>
-                       <td>
-                        ({{$ctrl.value}} & Math.pow(2,{{tbl.rank}}) === Math.pow(2,{{tbl.rank}})
-                       </td>
-                       <td>
-                        {{$ctrl.getResult(tbl.rank)}}
-                       </td>
-                   </tr>
-               </tbody> 
-              </table>
+            <div class=mycomp>
+                <div class="panel-heading">Total: {{$ctrl.value}}
+                </div>
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Selected    
+                        </th>
+                        <th>
+                            Table Name
+                        </th>
+                        <th>
+                            Bit pos
+                        </th>
+                        <th>
+                            Value
+                        </th>
+                        <th>
+                            Validation Expression
+                        </th>
+                        <th>
+                            Result
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-class="{selected:tbl.selected}" ng-repeat="tbl in $ctrl.tables">
+                        <td>
+                            <input type="checkbox"  ng-true-value=1 ng-false-value=0 ng-model="tbl.selected" id="filter_cb-{{tbl}}-{{$index}}" ng_change="$ctrl.calcValue(this);"> </input>
+                        </td>
+                        <td>
+                            {{tbl.city}}
+                        </td>
+                        <td>
+                            {{ tbl.rank}}
+                        </td>
+                        <td>
+                            {{ tbl.value }}
+                        </td>
+                        <td>
+                            ({{$ctrl.value}} & Math.pow(2,{{tbl.rank}})) === Math.pow(2,{{tbl.rank}})
+                        </td>
+                        <td  ng-model="tbl.selected">
+                            {{$ctrl.getResult(tbl.rank)}}
+                        </td>
+                    </tr>
+                </tbody> 
+                </table>
+            </div>
             `,
             //templateUrl: 'templateUrl',
             controller: myController,
@@ -102,6 +105,7 @@
     function myController($rootScope, ListTables) {
         var $ctrl = this;
         $ctrl.value = 0;
+        $ctrl.itemsSelected=0;
 
         ////////////////
         function activate() {
