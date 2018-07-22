@@ -45,6 +45,13 @@
         .module('bits')
         .component('myComp', {
             template:`
+            <style>
+            .mycomp .selected {
+                color:green;
+                font-weight: bold;
+                background-color: yellow
+            }
+            </style>            
             <div class=mycomp>
                 <div class="panel-heading">Total: {{$ctrl.value}}
                 </div>
