@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Angular & RxJS example - Pull paged api, stitch, filter, sort, and display data</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div ng-app="MyApp">
+  <div ng-controller="MyCtrl">
+    <H1>A real world Angular & RxJS solution</H1>
+    <p>We need to pull the star wars people and starships apis, to determine a fleet roster. The data needs to be retreived from a legacy api service, stitched together, filterable, and sorted.</p>
+    <hr />
+    
+    <roster></roster>
+  </div> 
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.0-rc.1/Rx.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
