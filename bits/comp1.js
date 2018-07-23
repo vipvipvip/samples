@@ -51,9 +51,29 @@
                 font-weight: bold;
                 background-color: yellow
             }
-            </style>            
+
+            .infobar {
+                background-color: lighten(green, 20%);
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 75px;
+                z-index: 10;
+                background: green;
+                color: white;
+                font-weight: bold;
+
+
+            }
+            .middle-section: {
+                text-align: center;
+            }            </style>            
             <div class=mycomp>
-                <div class="panel-heading">Total: {{$ctrl.value}}
+                <div class="infobar">
+                    <div>Total: {{$ctrl.value}}</div>
+                    <div class="middle-section">Items checked: {{$ctrl.itemsSelected}}</div>
                 </div>
                 <table class="table">
                 <thead>
@@ -126,6 +146,7 @@
 
         $ctrl.calcValue = function(cb) {
             $ctrl.value = $ctrl.tables.reduce( (acc, val) => val.selected ? acc+val.value : acc, 0  );
+            $ctrl.itemsSelected =  $ctrl.tables.reduce( (acc, val) => val.selected ? acc+1 : acc, 0  );
         }
 
         $ctrl.getResult = function(rank) {
