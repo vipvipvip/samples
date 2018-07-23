@@ -146,7 +146,7 @@
 
         $ctrl.calcValue = function(cb) {
             $ctrl.value = $ctrl.tables.reduce( (acc, val) => val.selected ? acc+val.value : acc, 0  );
-            $ctrl.itemsSelected =  $ctrl.tables.reduce( (acc, val) => val.selected ? acc+1 : acc, 0  );
+            $ctrl.itemsSelected += cb.tbl.selected==1 ? 1 : -1;
         }
 
         $ctrl.getResult = function(rank) {
