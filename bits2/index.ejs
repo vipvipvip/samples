@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="bits" class="no-js">
+<html lang="en" ng-app="bits" class="no-js" ng-strict-di>
 <head>
 
 <!-- Meta tags -->
@@ -11,7 +11,7 @@
 <meta http-equiv="Expires" content="0" />
 
 <!-- Set the context root of the site -->
-<base href="/">
+<base href="<%= htmlWebpackPlugin.options.baseHref %>">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
