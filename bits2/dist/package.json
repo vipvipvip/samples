@@ -1,0 +1,17 @@
+{
+  "name": "minimal-unicorn-http-server",
+  "version": "0.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "yargs": "^7.1.0"
+  },
+  "devDependencies": {}
+}

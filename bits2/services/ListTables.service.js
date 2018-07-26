@@ -14,7 +14,7 @@
         ////////////////
 
         function getTablesList() {
-            return fetch( '/bits/i3tables.json', {
+            return fetch( './services/i3tables.json', {
                 method: 'GET',
                 cache: 'no-cache'
                 })
