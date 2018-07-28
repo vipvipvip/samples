@@ -17,6 +17,7 @@ app.use('/public', express.static(absPath('public')));
 // serve for cc/public
 app.use('/cc/public', express.static(absPath('public')));
 
+app.use('/data', express.static(absPath('public/data')))
 // do not cache our index.html
 app.use(function(req, res, next) {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');

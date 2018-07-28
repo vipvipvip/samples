@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('bits')
+        .module('bits2')
         .service('ListTables', ListTablesService);
 
         ListTablesService.$inject = [];
@@ -14,7 +14,7 @@
         ////////////////
 
         function getTablesList() {
-            return fetch( './services/i3tables.json', {
+            return fetch( '/data/i3tables.json', {
                 method: 'GET',
                 cache: 'no-cache'
                 })

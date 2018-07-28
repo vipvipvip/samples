@@ -8,3 +8,4 @@ _.mixin(inflection);
 import './app.js';
 import './components';
 import './services';
+import './data';

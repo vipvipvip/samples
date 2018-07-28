@@ -20,4 +20,4 @@ const externalDependencies = [
   'ngMessages'
 ];
 
-export default ng.module('bits', externalDependencies);
+export default ng.module('bits2', externalDependencies);

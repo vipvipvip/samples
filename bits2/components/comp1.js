@@ -7,7 +7,7 @@
     // 
 
     angular
-        .module('bits')
+        .module('bits2')
         .component('myComp', {
             template:`
             <style>
