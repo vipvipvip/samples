@@ -33,5 +33,5 @@ app.use(express.static(absPath('')));
 
 // start it
 app.listen(port, function() {
-  console.log('Unicorn listening on port ' + port);
+  console.log('Listening on port ' + port);
 });
